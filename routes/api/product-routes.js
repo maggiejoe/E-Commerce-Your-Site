@@ -17,14 +17,16 @@ router.get('/', (req, res) => {
 
 // get one product
 router.get('/:id', (req, res) => {
+  console.log("will we see this?");
   // find a single product by its `id`
   Product.findOne({
-    where: { id: req.params.id }, include: [ Product, Tag ]
+    where: { id: req.params.id }, include: [ Tag ]
   })
   .then(productRes => res.json(productRes))
-  .catch(err =>
-    res.status(500).json(err)
-    )
+  .catch((err) => {
+    console.log(err)
+    res.status(500).json(err)}
+  )
 });
 
 // create new product
@@ -93,7 +95,7 @@ router.put('/:id', (req, res) => {
     })
     .then((updatedProductTags) => res.json(updatedProductTags))
     .catch((err) => {
-      // console.log(err);
+      console.log(err);
       res.status(400).json(err);
     });
 });
