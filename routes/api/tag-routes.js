@@ -33,11 +33,14 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create(req.body)
-  .then(tagRes => res.json(tagRes))
-  .catch(err =>
-    res.status(500).json(err)
-  )
+  Tag.create({
+    tag_name: req.body.tag_name
+  })
+  .then(tag => {res.json(tag)})
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 router.put('/:id', (req, res) => {

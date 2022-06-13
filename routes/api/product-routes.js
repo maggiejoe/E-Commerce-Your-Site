@@ -20,7 +20,7 @@ router.get('/:id', (req, res) => {
   console.log("will we see this?");
   // find a single product by its `id`
   Product.findOne({
-    where: { id: req.params.id }, include: [ Tag ]
+    where: { id: req.params.id }, include: [ Category, Tag ]
   })
   .then(productRes => res.json(productRes))
   .catch((err) => {
