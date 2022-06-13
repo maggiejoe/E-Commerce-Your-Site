@@ -6,8 +6,10 @@ This assignment was to use the starter code given, and fill in the rest to compl
 
 ## Walkthrough Video
 
-## Deployment Link
 
+
+## Deployment Link
+* GitHub Link: https://maggiejoe.github.io/E-Commerce-Your-Site/
 
 
 # challenge #13 Criteria
